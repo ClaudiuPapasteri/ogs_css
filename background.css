@@ -1,13 +1,14 @@
-#root {
-    background-image: url('https://i.ibb.co/5WQR2pdX/atlantis-nexus-nebula-black-background-digital-render-3840x2160-3704.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+html, body {
+    height: 100% !important;
+    background-image: url('https://i.ibb.co/5WQR2pdX/atlantis-nexus-nebula-black-background-digital-render-3840x2160-3704.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
-/* Make inner boxes transparent so background image shows */
-.container, .content, .Card {
+/* Remove solid backgrounds that cover body */
+.SiteShell, .SiteShell-content, .PlayerProfile, .container {
     background: transparent !important;
 }
 
