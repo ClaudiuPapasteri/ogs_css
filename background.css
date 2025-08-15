@@ -5,8 +5,17 @@ body {
     background-attachment: fixed; /* (Optional) makes background stay put on scroll */
     background-repeat: no-repeat; /* Prevent tiling */
 }
+.container {
+    background: transparent !important;
+}
 
-/*
+.content,
+#root > div {
+    background: transparent !important;
+}
+
+
+/* simple single container for background image (but stretches content of page)
 .container {
     width: 100%; /* Ensure it fills the full width of its parent */
     max-width: none !important; /* Removes any maximum width restriction */
