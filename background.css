@@ -8,7 +8,6 @@ body {
 .container {
     background: transparent !important;
 }
-
 .content,
 #root > div {
     background: transparent !important;
