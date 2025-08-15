@@ -1,19 +1,4 @@
-html, body {
-    height: 100% !important;
-    background-image: url('https://i.ibb.co/5WQR2pdX/atlantis-nexus-nebula-black-background-digital-render-3840x2160-3704.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-}
-
-/* Remove solid backgrounds that cover body */
-.SiteShell, .SiteShell-content, .PlayerProfile, .container {
-    background: transparent !important;
-}
-
-
-/* simple single container for background image (but stretches content of page)
+/* For background image (but stretches content of page) */
 .container {
     width: 100%; /* Ensure it fills the full width of its parent */
     max-width: none !important; /* Removes any maximum width restriction */
@@ -21,4 +6,13 @@ html, body {
     background-size: cover; /* Ensures the background covers the full container */
     background-position: center; /* Centers the background image */
 }
-*/
+
+/* Keep inner boxes normal width */
+.SiteShell-content,
+.content,
+.Card,
+.PlayerProfile {
+    max-width: 1200px !important;  /* or whatever default width you prefer */
+    margin: 0 auto !important;     /* center horizontally */
+    background: rgba(0,0,0,0.6) !important; /* optional: semi-transparent overlay for readability */
+}
