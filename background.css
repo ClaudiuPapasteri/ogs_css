@@ -1,15 +1,13 @@
-body {
+#root {
     background-image: url('https://i.ibb.co/5WQR2pdX/atlantis-nexus-nebula-black-background-digital-render-3840x2160-3704.jpg');
-    background-size: cover;       /* Cover the full screen */
-    background-position: center;  /* Center the image */
-    background-attachment: fixed; /* (Optional) makes background stay put on scroll */
-    background-repeat: no-repeat; /* Prevent tiling */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
-.container {
-    background: transparent !important;
-}
-.content,
-#root > div {
+
+/* Make inner boxes transparent so background image shows */
+.container, .content, .Card {
     background: transparent !important;
 }
 
