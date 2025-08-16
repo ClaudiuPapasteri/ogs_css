@@ -18,7 +18,7 @@
     z-index: -1;
     pointer-events: none;
 
-    /* 10 stones (white & black alternating) */
+    /* Stones (white & black) */
     background-image:
         radial-gradient(circle, white 60%, transparent 61%),
         radial-gradient(circle, black 60%, transparent 61%),
@@ -32,7 +32,7 @@
         radial-gradient(circle, black 60%, transparent 61%);
     background-repeat: no-repeat;
 
-    /* Spread-out positions to avoid overlap */
+    /* Pre-chosen non-overlapping positions */
     background-position:
         15% 25%,
         30% 60%,
@@ -59,26 +59,28 @@
     animation: placeStones 30s forwards;
 }
 
-/* Sequential placement with "click in" effect */
+/* Sequential placement with click effect */
 @keyframes placeStones {
-    0%   { background-size: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
-
     /* Stone 1 */
-    5%   { background-size: 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(4px, 0) scale(1); }
-    8%   { background-size: 110px 110px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(4px, 0) scale(0.9); }
+    0%   { background-size: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: none; }
+    5%   { background-size: 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(6px,0) scale(1); }
+    10%  { background-size: 108px 108px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(6px,0) scale(0.9); }
 
     /* Stone 2 */
-    14%  { background-size: 110px 110px, 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0, 4px) scale(1); }
-    17%  { background-size: 110px 110px, 110px 110px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0, 4px) scale(0.9); }
+    15%  { background-size: 108px 108px, 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0,6px) scale(1); }
+    20%  { background-size: 108px 108px, 108px 108px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0,6px) scale(0.9); }
 
     /* Stone 3 */
-    23%  { background-size: 110px 110px, 110px 110px, 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(-4px, 0) scale(1); }
-    26%  { background-size: 110px 110px, 110px 110px, 110px 110px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(-4px, 0) scale(0.9); }
+    25%  { background-size: 108px 108px, 108px 108px, 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(-6px,0) scale(1); }
+    30%  { background-size: 108px 108px, 108px 108px, 108px 108px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(-6px,0) scale(0.9); }
 
     /* Stone 4 */
-    32%  { background-size: 110px 110px, 110px 110px, 110px 110px, 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0, -4px) scale(1); }
-    35%  { background-size: 110px 110px, 110px 110px, 110px 110px, 110px 110px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0, -4px) scale(0.9); }
+    35%  { background-size: 108px 108px, 108px 108px, 108px 108px, 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0,-6px) scale(1); }
+    40%  { background-size: 108px 108px, 108px 108px, 108px 108px, 108px 108px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0,-6px) scale(0.9); }
 
-    /* Continue similarly for stones 5–10... */
-    100% { background-size: 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px; }
+    /* Continue similarly until all stones placed... */
+    100% { background-size: 108px 108px, 108px 108px, 108px 108px, 108px 108px,
+                          108px 108px, 108px 108px, 108px 108px, 108px 108px,
+                          108px 108px, 108px 108px;
+           transform: none; }
 }
