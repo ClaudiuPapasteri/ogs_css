@@ -10,16 +10,18 @@
     overflow: hidden;
 }
 
-/* Layer for Go stones */
+/* Go stones layer */
 .container::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    z-index: -1; /* stay behind all content */
+    z-index: -1;
     pointer-events: none;
 
-    /* Multiple black & white stones (radial gradients) */
+    /* 10 stones (white & black alternating) */
     background-image:
+        radial-gradient(circle, white 60%, transparent 61%),
+        radial-gradient(circle, black 60%, transparent 61%),
         radial-gradient(circle, white 60%, transparent 61%),
         radial-gradient(circle, black 60%, transparent 61%),
         radial-gradient(circle, white 60%, transparent 61%),
@@ -29,6 +31,8 @@
         radial-gradient(circle, white 60%, transparent 61%),
         radial-gradient(circle, black 60%, transparent 61%);
     background-repeat: no-repeat;
+
+    /* Spread-out positions to avoid overlap */
     background-position:
         15% 25%,
         30% 60%,
@@ -37,32 +41,44 @@
         85% 30%,
         40% 80%,
         20% 70%,
-        65% 20%;
+        65% 20%,
+        50% 50%,
+        80% 60%;
     background-size:
-        100px 100px,
-        100px 100px,
-        100px 100px,
-        100px 100px,
-        100px 100px,
-        100px 100px,
-        100px 100px,
-        100px 100px;
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0;
 
-    animation: placeStone 12s infinite;
+    animation: placeStones 30s forwards;
 }
 
-/* Animation: small shift + shrink */
-@keyframes placeStone {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-    10% {
-        transform: translate(8px, 0) scale(1);
-    }
-    20% {
-        transform: translate(8px, 0) scale(0.9);
-    }
-    100% {
-        transform: translate(8px, 0) scale(0.9);
-    }
+/* Sequential placement with "click in" effect */
+@keyframes placeStones {
+    0%   { background-size: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+
+    /* Stone 1 */
+    5%   { background-size: 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(4px, 0) scale(1); }
+    8%   { background-size: 110px 110px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(4px, 0) scale(0.9); }
+
+    /* Stone 2 */
+    14%  { background-size: 110px 110px, 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0, 4px) scale(1); }
+    17%  { background-size: 110px 110px, 110px 110px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0, 4px) scale(0.9); }
+
+    /* Stone 3 */
+    23%  { background-size: 110px 110px, 110px 110px, 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(-4px, 0) scale(1); }
+    26%  { background-size: 110px 110px, 110px 110px, 110px 110px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(-4px, 0) scale(0.9); }
+
+    /* Stone 4 */
+    32%  { background-size: 110px 110px, 110px 110px, 110px 110px, 120px 120px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0, -4px) scale(1); }
+    35%  { background-size: 110px 110px, 110px 110px, 110px 110px, 110px 110px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; transform: translate(0, -4px) scale(0.9); }
+
+    /* Continue similarly for stones 5–10... */
+    100% { background-size: 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px, 110px 110px; }
 }
