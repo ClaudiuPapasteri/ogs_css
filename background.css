@@ -11,46 +11,52 @@
 }
 
 /* Go stones layer */
-
-/* Stones */
 .stone {
     position: absolute;
     border-radius: 50%;
     width: 100px;
     height: 100px;
     opacity: 0;
+    transform: scale(1.2); /* Start slightly larger */
 }
 
-/* White/black coloring */
-.stone.white { background: white; }
-.stone.black { background: black; }
+.stone.white { background: white; box-shadow: 0 0 10px rgba(255,255,255,0.5); }
+.stone.black { background: black; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
 
-/* Keyframes: appear at full size, shift and shrink once, then stay */
+/* New keyframes: appear at larger size, then quickly settle into final position */
 @keyframes placeStone {
-    0%   { opacity: 0; transform: translate(0,0) scale(1); }
-    10%  { opacity: 1; transform: translate(var(--dx), var(--dy)) scale(1); }
-    20%  { opacity: 1; transform: translate(var(--dx), var(--dy)) scale(0.9); }
-    100% { opacity: 1; transform: translate(var(--dx), var(--dy)) scale(0.9); }
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(1.2);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(var(--dx), var(--dy)) scale(1);
+    }
 }
 
-/* Each stone uses same keyframes, short duration, one-time only */
-.stone1  { animation: placeStone 1s forwards; --dx: 8px;  --dy: 0;   left: 10%; top: 20%; }
-.stone2  { animation: placeStone 1s forwards 1.5s; --dx:-8px;  --dy: 0;   left: 25%; top: 40%; }
-.stone3  { animation: placeStone 1s forwards 3s;   --dx: 0;    --dy: 8px; left: 50%; top: 30%; }
-.stone4  { animation: placeStone 1s forwards 4.5s; --dx: 0;    --dy:-8px; left: 70%; top: 60%; }
-.stone5  { animation: placeStone 1s forwards 6s;   --dx: 8px;  --dy: 0;   left: 85%; top: 25%; }
-.stone6  { animation: placeStone 1s forwards 7.5s; --dx:-8px;  --dy: 0;   left: 35%; top: 75%; }
-.stone7  { animation: placeStone 1s forwards 9s;   --dx: 0;    --dy: 8px; left: 15%; top: 65%; }
-.stone8  { animation: placeStone 1s forwards 10.5s;--dx: 0;    --dy:-8px; left: 60%; top: 15%; }
-.stone9  { animation: placeStone 1s forwards 12s;  --dx: 8px;  --dy: 0;   left: 40%; top: 50%; }
-.stone10 { animation: placeStone 1s forwards 13.5s;--dx:-8px;  --dy: 0;   left: 75%; top: 40%; }
-.stone11 { animation: placeStone 1s forwards 15s;  --dx: 0;    --dy: 8px; left: 20%; top: 35%; }
-.stone12 { animation: placeStone 1s forwards 16.5s;--dx: 0;    --dy:-8px; left: 55%; top: 70%; }
-.stone13 { animation: placeStone 1s forwards 18s;  --dx: 8px;  --dy: 0;   left: 80%; top: 55%; }
-.stone14 { animation: placeStone 1s forwards 19.5s;--dx:-8px;  --dy: 0;   left: 30%; top: 15%; }
-.stone15 { animation: placeStone 1s forwards 21s;  --dx: 0;    --dy: 8px; left: 45%; top: 80%; }
-.stone16 { animation: placeStone 1s forwards 22.5s;--dx: 0;    --dy:-8px; left: 10%; top: 50%; }
-.stone17 { animation: placeStone 1s forwards 24s;  --dx: 8px;  --dy: 0;   left: 65%; top: 25%; }
-.stone18 { animation: placeStone 1s forwards 25.5s;--dx:-8px;  --dy: 0;   left: 90%; top: 45%; }
-.stone19 { animation: placeStone 1s forwards 27s;  --dx: 0;    --dy: 8px; left: 35%; top: 60%; }
-.stone20 { animation: placeStone 1s forwards 28.5s;--dx: 0;    --dy:-8px; left: 50%; top: 10%; }
+/* Assign animations with proper timing */
+.stone1  { animation: placeStone 0.5s forwards; --dx: 8px;  --dy: 0;   left: 10%; top: 20%; }
+.stone2  { animation: placeStone 0.5s forwards 0.5s; --dx:-8px;  --dy: 0;   left: 25%; top: 40%; }
+.stone3  { animation: placeStone 0.5s forwards 1s;   --dx: 0;    --dy: 8px; left: 50%; top: 30%; }
+.stone4  { animation: placeStone 0.5s forwards 1.5s; --dx: 0;    --dy:-8px; left: 70%; top: 60%; }
+.stone5  { animation: placeStone 0.5s forwards 2s;   --dx: 8px;  --dy: 0;   left: 85%; top: 25%; }
+.stone6  { animation: placeStone 0.5s forwards 2.5s; --dx:-8px;  --dy: 0;   left: 35%; top: 75%; }
+.stone7  { animation: placeStone 0.5s forwards 3s;   --dx: 0;    --dy: 8px; left: 15%; top: 65%; }
+.stone8  { animation: placeStone 0.5s forwards 3.5s; --dx: 0;    --dy:-8px; left: 60%; top: 15%; }
+.stone9  { animation: placeStone 0.5s forwards 4s;  --dx: 8px;  --dy: 0;   left: 40%; top: 50%; }
+.stone10 { animation: placeStone 0.5s forwards 4.5s;--dx:-8px;  --dy: 0;   left: 75%; top: 40%; }
+.stone11 { animation: placeStone 0.5s forwards 5s;  --dx: 0;    --dy: 8px; left: 20%; top: 35%; }
+.stone12 { animation: placeStone 0.5s forwards 5.5s;--dx: 0;    --dy:-8px; left: 55%; top: 70%; }
+.stone13 { animation: placeStone 0.5s forwards 6s;  --dx: 8px;  --dy: 0;   left: 80%; top: 55%; }
+.stone14 { animation: placeStone 0.5s forwards 6.5s;--dx:-8px;  --dy: 0;   left: 30%; top: 15%; }
+.stone15 { animation: placeStone 0.5s forwards 7s;  --dx: 0;    --dy: 8px; left: 45%; top: 80%; }
+.stone16 { animation: placeStone 0.5s forwards 7.5s;--dx: 0;    --dy:-8px; left: 10%; top: 50%; }
+.stone17 { animation: placeStone 0.5s forwards 8s;  --dx: 8px;  --dy: 0;   left: 65%; top: 25%; }
+.stone18 { animation: placeStone 0.5s forwards 8.5s;--dx:-8px;  --dy: 0;   left: 90%; top: 45%; }
+.stone19 { animation: placeStone 0.5s forwards 9s;  --dx: 0;    --dy: 8px; left: 35%; top: 60%; }
+.stone20 { animation: placeStone 0.5s forwards 9.5s;--dx: 0;    --dy:-8px; left: 50%; top: 10%; }
