@@ -1,10 +1,47 @@
-/* For background image (but stretches content of page) */
+/* Background image for your profile container */
 .container {
     width: 100%; /* Ensure it fills the full width of its parent */
     max-width: none !important; /* Removes any maximum width restriction */
     background-image: url('https://i.ibb.co/5WQR2pdX/atlantis-nexus-nebula-black-background-digital-render-3840x2160-3704.jpg');
     background-size: cover; /* Ensures the background covers the full container */
     background-position: center; /* Centers the background image */
+    position: relative; /* Important for layering particles */
+    overflow: hidden;
 }
 
+/* Base particle style */
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-repeat: repeat;
+    pointer-events: none;
+}
+
+/* White upward-floating particles */
+.container::before {
+    background-image: radial-gradient(white 3px, transparent 4px);
+    background-size: 120px 120px;
+    animation: floatUp 15s linear infinite;
+    opacity: 0.7;
+}
+
+/* Black downward-floating particles */
+.container::after {
+    background-image: radial-gradient(black 4px, transparent 5px);
+    background-size: 140px 140px;
+    animation: floatDown 18s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    from { background-position: 0 100%; }
+    to   { background-position: 0 -100%; }
+}
+
+@keyframes floatDown {
+    from { background-position: 0 -100%; }
+    to   { background-position: 0 100%; }
+}
 
