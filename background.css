@@ -5,43 +5,46 @@
     background-image: url('https://i.ibb.co/5WQR2pdX/atlantis-nexus-nebula-black-background-digital-render-3840x2160-3704.jpg');
     background-size: cover; /* Ensures the background covers the full container */
     background-position: center; /* Centers the background image */
-    position: relative; /* Important for layering particles */
+    position: relative; /* Important for layering the animation */
+    z-index: 0; /* Make container the base layer */
     overflow: hidden;
 }
 
-/* Base particle style */
-.container::before,
-.container::after {
+/* Layer for Go stones */
+.container::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-repeat: repeat;
+    z-index: -1; /* keeps it behind all page content */
     pointer-events: none;
+
+    /* Multiple circles (black & white) placed as gradients */
+    background-image:
+        radial-gradient(circle, white 60%, transparent 61%),
+        radial-gradient(circle, black 60%, transparent 61%),
+        radial-gradient(circle, white 60%, transparent 61%),
+        radial-gradient(circle, black 60%, transparent 61%);
+    background-repeat: no-repeat;
+    background-position:
+        20% 30%,
+        70% 40%,
+        50% 70%,
+        80% 80%;
+    background-size:
+        0 0,
+        0 0,
+        0 0,
+        0 0;
+
+    animation: stonesClick 20s infinite;
 }
 
-/* White upward-floating particles */
-.container::before {
-    background-image: radial-gradient(white 3px, transparent 4px);
-    background-size: 120px 120px;
-    animation: floatUp 15s linear infinite;
-    opacity: 0.7;
+/* Animation: stones appear randomly, "click in" */
+@keyframes stonesClick {
+    0%   { background-size: 0 0, 0 0, 0 0, 0 0; }
+    10%  { background-size: 80px 80px, 0 0, 0 0, 0 0; }
+    30%  { background-size: 80px 80px, 80px 80px, 0 0, 0 0; }
+    50%  { background-size: 80px 80px, 80px 80px, 80px 80px, 0 0; }
+    70%  { background-size: 80px 80px, 80px 80px, 80px 80px, 80px 80px; }
+    100% { background-size: 80px 80px, 80px 80px, 80px 80px, 80px 80px; }
 }
-
-/* Black downward-floating particles */
-.container::after {
-    background-image: radial-gradient(black 4px, transparent 5px);
-    background-size: 140px 140px;
-    animation: floatDown 18s linear infinite;
-    opacity: 0.8;
-}
-
-@keyframes floatUp {
-    from { background-position: 0 100%; }
-    to   { background-position: 0 -100%; }
-}
-
-@keyframes floatDown {
-    from { background-position: 0 -100%; }
-    to   { background-position: 0 100%; }
-}
-
