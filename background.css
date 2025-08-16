@@ -8,6 +8,7 @@
     position: relative; /* Important for layering the animation */
     z-index: 0; /* Make container the base layer */
     overflow: hidden;
+    min-height: 100vh; /* Ensure container is tall enough */
 }
 
 /* Go stones layer */
