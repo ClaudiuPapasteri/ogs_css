@@ -15,36 +15,54 @@
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    z-index: -1; /* keeps it behind all page content */
+    z-index: -1; /* stay behind all content */
     pointer-events: none;
 
-    /* Multiple circles (black & white) placed as gradients */
+    /* Multiple black & white stones (radial gradients) */
     background-image:
+        radial-gradient(circle, white 60%, transparent 61%),
+        radial-gradient(circle, black 60%, transparent 61%),
+        radial-gradient(circle, white 60%, transparent 61%),
+        radial-gradient(circle, black 60%, transparent 61%),
         radial-gradient(circle, white 60%, transparent 61%),
         radial-gradient(circle, black 60%, transparent 61%),
         radial-gradient(circle, white 60%, transparent 61%),
         radial-gradient(circle, black 60%, transparent 61%);
     background-repeat: no-repeat;
     background-position:
-        20% 30%,
-        70% 40%,
-        50% 70%,
-        80% 80%;
+        15% 25%,
+        30% 60%,
+        55% 40%,
+        70% 75%,
+        85% 30%,
+        40% 80%,
+        20% 70%,
+        65% 20%;
     background-size:
-        0 0,
-        0 0,
-        0 0,
-        0 0;
+        100px 100px,
+        100px 100px,
+        100px 100px,
+        100px 100px,
+        100px 100px,
+        100px 100px,
+        100px 100px,
+        100px 100px;
 
-    animation: stonesClick 20s infinite;
+    animation: placeStone 12s infinite;
 }
 
-/* Animation: stones appear randomly, "click in" */
-@keyframes stonesClick {
-    0%   { background-size: 0 0, 0 0, 0 0, 0 0; }
-    10%  { background-size: 80px 80px, 0 0, 0 0, 0 0; }
-    30%  { background-size: 80px 80px, 80px 80px, 0 0, 0 0; }
-    50%  { background-size: 80px 80px, 80px 80px, 80px 80px, 0 0; }
-    70%  { background-size: 80px 80px, 80px 80px, 80px 80px, 80px 80px; }
-    100% { background-size: 80px 80px, 80px 80px, 80px 80px, 80px 80px; }
+/* Animation: small shift + shrink */
+@keyframes placeStone {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    10% {
+        transform: translate(8px, 0) scale(1);
+    }
+    20% {
+        transform: translate(8px, 0) scale(0.9);
+    }
+    100% {
+        transform: translate(8px, 0) scale(0.9);
+    }
 }
