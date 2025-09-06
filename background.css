@@ -1,7 +1,7 @@
 /* Background image for your profile container */
 .container {
     width: 100%; /* Ensure it fills the full width of its parent */
-    max-width: none !important; /* Removes any maximum width restriction 
+    max-width: none !important; /* Removes any maximum width restriction */
     background-image: url('Kawase Hasui - Mito Hinuma Hiroura_bg.jpg');   /* usual is https://claudiupapasteri.github.io/ogs_css/galaxy_modif.png */
     background-size: cover; /* Ensures the background covers the full container */
     background-position: center; /* Centers the background image */
