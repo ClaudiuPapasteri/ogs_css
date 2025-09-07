@@ -12,18 +12,24 @@
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
 
-/* Add a solid background to the ratings containers */
-.ratings-chart,
-.ratings-container {
-    themed background card-background-color !important;
-    position: relative;
-    z-index: 1;
+/* Add a background layer behind the content */
+.ratings-chart::before,
+.ratings-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--card-background-color) !important;
+    border-radius: 4px;
+    z-index: -1;
 }
 
-/* Ensure all child elements inherit the background */
-.ratings-chart *,
-.ratings-container * {
-    background-color: inherit !important;
+.ratings-chart,
+.ratings-container {
+    position: relative;
+    z-index: 1;
 }
 
 /* Go stones layer */
