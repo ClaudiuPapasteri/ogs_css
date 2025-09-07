@@ -11,13 +11,20 @@
 }
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
-.ratings-chart,
-.ratings-container {
-  background-color: var(--theme-card-background-color) !important;
-  color: var(--theme-text-color) !important;
-  border-radius: 4px;
-  padding: 1em;
+.ratings-chart {
+    themed background card-background-color;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.ratings-container {
+    themed background card-background-color;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Go stones layer */
 
