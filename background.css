@@ -12,40 +12,42 @@
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
 
-/* Use direct hex values instead of CSS variables */
-.profile-card {
-    background-color: #222222 !important; /* dark theme background */
-    border-radius: 4px;
-    padding: 15px;
-}
-
-/* For light theme support */
-body.light .profile-card {
-    background-color: #f7f7f7 !important; /* light theme background */
-}
-
-/* If profile-card isn't the right container, use avatar-and-ratings-row */
-.avatar-and-ratings-row {
+/* Nuclear option - maximum specificity targeting */
+body.dark #main-content > div > main > div > div > div > div > .profile-card,
+body.dark #main-content > div > main > div > div > div > .profile-card,
+body.dark #main-content > div > main > div > div > .profile-card,
+body.dark #main-content > div > main > div > .profile-card,
+body.dark #main-content > div > main > .profile-card {
     background-color: #222222 !important;
-    border-radius: 4px;
-    padding: 15px;
+    border-radius: 4px !important;
+    padding: 15px !important;
 }
 
-body.light .avatar-and-ratings-row {
+body.dark #main-content > div > main > div > div > div > div > .avatar-and-ratings-row,
+body.dark #main-content > div > main > div > div > div > .avatar-and-ratings-row,
+body.dark #main-content > div > main > div > div > .avatar-and-ratings-row,
+body.dark #main-content > div > main > div > .avatar-and-ratings-row,
+body.dark #main-content > div > main > .avatar-and-ratings-row {
+    background-color: #222222 !important;
+    border-radius: 4px !important;
+    padding: 15px !important;
+}
+
+/* Light theme variants */
+body.light #main-content > div > main > div > div > div > div > .profile-card,
+body.light #main-content > div > main > div > div > div > .profile-card,
+body.light #main-content > div > main > div > div > .profile-card,
+body.light #main-content > div > main > div > .profile-card,
+body.light #main-content > div > main > .profile-card {
     background-color: #f7f7f7 !important;
 }
 
-/* Make sure text is readable */
-.ratings-container,
-.ratings-chart,
-.ratings-grid {
-    color: #bbbbbb !important; /* dark text color */
-}
-
-body.light .ratings-container,
-body.light .ratings-chart,
-body.light .ratings-grid {
-    color: #202020 !important; /* light text color */
+body.light #main-content > div > main > div > div > div > div > .avatar-and-ratings-row,
+body.light #main-content > div > main > div > div > div > .avatar-and-ratings-row,
+body.light #main-content > div > main > div > div > .avatar-and-ratings-row,
+body.light #main-content > div > main > div > .avatar-and-ratings-row,
+body.light #main-content > div > main > .avatar-and-ratings-row {
+    background-color: #f7f7f7 !important;
 }
 
 /* Go stones layer */
