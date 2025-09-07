@@ -12,46 +12,47 @@
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
 
-/* Target the containers and all their children */
-.ratings-chart,
-.ratings-container,
-.ratings-chart *,
-.ratings-container * {
-    background-color: inherit !important;
-    color: inherit !important;
-}
-
-/* Force background on the containers */
-.ratings-chart,
-.ratings-container {
-    themed background card-background-color !important;
-    themed color text-color !important;
+/* Target the specific containers that are transparent */
+.RatingsChart,
+.ratings-graph,
+.ratings-chart > div,
+.ratings-container > div {
+    background-color: var(--card-background-color) !important;
     border-radius: 4px;
     padding: 10px;
-    position: relative;
-    z-index: 1;
 }
 
-/* Specific targeting for common chart elements */
-.ratings-chart canvas {
+/* For the SVG chart itself */
+.ratings-chart svg.chart {
     background-color: var(--card-background-color) !important;
 }
 
-/* For React-based charts that might use specific classes */
-.ratings-chart .recharts-wrapper,
-.ratings-chart .recharts-surface {
+/* For the chart area path */
+.ratings-chart .deviation-area {
+    fill: var(--chart-area) !important;
+    opacity: 0.7 !important;
+}
+
+/* For chart lines and other elements */
+.ratings-chart path,
+.ratings-chart line {
+    stroke: var(--chart-line) !important;
+}
+
+/* For text elements in the chart */
+.ratings-chart text {
+    fill: var(--text-color) !important;
+}
+
+/* For table elements */
+.ratings-container table {
     background-color: var(--card-background-color) !important;
 }
 
-/* For table elements specifically */
-.ratings-container table,
-.ratings-container thead,
-.ratings-container tbody,
-.ratings-container tr,
-.ratings-container td,
-.ratings-container th {
-    background-color: inherit !important;
-    color: inherit !important;
+.ratings-container th,
+.ratings-container td {
+    background-color: var(--card-background-color) !important;
+    color: var(--text-color) !important;
     border-color: var(--shade3) !important;
 }
 
