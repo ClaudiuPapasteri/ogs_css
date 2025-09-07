@@ -12,48 +12,18 @@
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
 
-/* Target the specific containers that are transparent */
-.RatingsChart,
-.ratings-graph,
-.ratings-chart > div,
-.ratings-container > div {
-    background-color: var(--card-background-color) !important;
-    border-radius: 4px;
-    padding: 10px;
+/* Add a solid background to the ratings containers */
+.ratings-chart,
+.ratings-container {
+    themed background card-background-color !important;
+    position: relative;
+    z-index: 1;
 }
 
-/* For the SVG chart itself */
-.ratings-chart svg.chart {
-    background-color: var(--card-background-color) !important;
-}
-
-/* For the chart area path */
-.ratings-chart .deviation-area {
-    fill: var(--chart-area) !important;
-    opacity: 0.7 !important;
-}
-
-/* For chart lines and other elements */
-.ratings-chart path,
-.ratings-chart line {
-    stroke: var(--chart-line) !important;
-}
-
-/* For text elements in the chart */
-.ratings-chart text {
-    fill: var(--text-color) !important;
-}
-
-/* For table elements */
-.ratings-container table {
-    background-color: var(--card-background-color) !important;
-}
-
-.ratings-container th,
-.ratings-container td {
-    background-color: var(--card-background-color) !important;
-    color: var(--text-color) !important;
-    border-color: var(--shade3) !important;
+/* Ensure all child elements inherit the background */
+.ratings-chart *,
+.ratings-container * {
+    background-color: inherit !important;
 }
 
 /* Go stones layer */
