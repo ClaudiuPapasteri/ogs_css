@@ -11,6 +11,8 @@
 }
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
+
+/* For the ratings chart container */
 .ratings-chart {
     themed background card-background-color;
     border-radius: 4px;
@@ -18,6 +20,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* For the ratings table container */
 .ratings-container {
     themed background card-background-color;
     border-radius: 4px;
@@ -25,6 +28,11 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* More specific selectors with themed mixin */
+.ratings-chart > div,
+.ratings-container > div {
+    themed background card-background-color !important;
+}
 
 /* Go stones layer */
 
