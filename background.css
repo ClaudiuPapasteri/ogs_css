@@ -23,14 +23,15 @@ body.dark #main-content > div > main > .profile-card {
     padding: 15px !important;
 }
 
-body.dark #main-content > div > main > div > div > div > div > .avatar-and-ratings-row,
-body.dark #main-content > div > main > div > div > div > .avatar-and-ratings-row,
-body.dark #main-content > div > main > div > div > .avatar-and-ratings-row,
-body.dark #main-content > div > main > div > .avatar-and-ratings-row,
-body.dark #main-content > div > main > .avatar-and-ratings-row {
+body.dark #main-content > div > main > div > div > div > div > .profile-card > .ratings-row,
+body.dark #main-content > div > main > div > div > div > .profile-card > .ratings-row,
+body.dark #main-content > div > main > div > div > .profile-card > .ratings-row,
+body.dark #main-content > div > main > div > .profile-card > .ratings-row,
+body.dark #main-content > div > main > .profile-card > .ratings-row {
     background-color: #222222 !important;
     border-radius: 4px !important;
     padding: 15px !important;
+    margin-top: 10px !important;
 }
 
 /* Light theme variants */
@@ -42,11 +43,11 @@ body.light #main-content > div > main > .profile-card {
     background-color: #f7f7f7 !important;
 }
 
-body.light #main-content > div > main > div > div > div > div > .avatar-and-ratings-row,
-body.light #main-content > div > main > div > div > div > .avatar-and-ratings-row,
-body.light #main-content > div > main > div > div > .avatar-and-ratings-row,
-body.light #main-content > div > main > div > .avatar-and-ratings-row,
-body.light #main-content > div > main > .avatar-and-ratings-row {
+body.light #main-content > div > main > div > div > div > div > .profile-card > .ratings-row,
+body.light #main-content > div > main > div > div > div > .profile-card > .ratings-row,
+body.light #main-content > div > main > div > div > .profile-card > .ratings-row,
+body.light #main-content > div > main > div > .profile-card > .ratings-row,
+body.light #main-content > div > main > .profile-card > .ratings-row {
     background-color: #f7f7f7 !important;
 }
 
