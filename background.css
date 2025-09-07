@@ -12,7 +12,7 @@
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
 
-/* Nuclear option - maximum specificity targeting */
+/* Dark theme - Profile */
 body.dark #main-content > div > main > div > div > div > div > .profile-card,
 body.dark #main-content > div > main > div > div > div > .profile-card,
 body.dark #main-content > div > main > div > div > .profile-card,
@@ -23,18 +23,7 @@ body.dark #main-content > div > main > .profile-card {
     padding: 15px !important;
 }
 
-body.dark #main-content > div > main > div > div > div > div > .profile-card > .ratings-row,
-body.dark #main-content > div > main > div > div > div > .profile-card > .ratings-row,
-body.dark #main-content > div > main > div > div > .profile-card > .ratings-row,
-body.dark #main-content > div > main > div > .profile-card > .ratings-row,
-body.dark #main-content > div > main > .profile-card > .ratings-row {
-    background-color: #222222 !important;
-    border-radius: 4px !important;
-    padding: 15px !important;
-    margin-top: 10px !important;
-}
-
-/* Light theme variants */
+/* Light theme - Profile */
 body.light #main-content > div > main > div > div > div > div > .profile-card,
 body.light #main-content > div > main > div > div > div > .profile-card,
 body.light #main-content > div > main > div > div > .profile-card,
@@ -43,12 +32,40 @@ body.light #main-content > div > main > .profile-card {
     background-color: #f7f7f7 !important;
 }
 
-body.light #main-content > div > main > div > div > div > div > .profile-card > .ratings-row,
-body.light #main-content > div > main > div > div > div > .profile-card > .ratings-row,
-body.light #main-content > div > main > div > div > .profile-card > .ratings-row,
-body.light #main-content > div > main > div > .profile-card > .ratings-row,
-body.light #main-content > div > main > .profile-card > .ratings-row {
+/* Dark theme - Chart */
+.ratings-chart,
+.ratings-chart > div,  /* Targets the first div child */
+.ratings-chart > div > div,  /* Targets the RatingsChart div */
+.ratings-chart > div > div > div,  /* Targets the ratings-graph div */
+.ratings-chart > div > div > div > div,  /* Targets the empty div */
+.ratings-chart > div > div > div > div > svg.chart {
+    background-color: #222222 !important;
+    border-radius: 4px;
+}
+
+/* Light theme - Chart */
+body.light .ratings-chart,
+body.light .ratings-chart > div,
+body.light .ratings-chart > div > div,
+body.light .ratings-chart > div > div > div,
+body.light .ratings-chart > div > div > div > div,
+body.light .ratings-chart > div > div > div > div > svg.chart {
     background-color: #f7f7f7 !important;
+}
+
+/* Add padding to the main chart container */
+.ratings-chart {
+    padding: 15px !important;
+    margin-top: 10px !important;
+}
+
+/* Ensure chart text is readable */
+.ratings-chart text {
+    fill: #bbbbbb !important;
+}
+
+body.light .ratings-chart text {
+    fill: #202020 !important;
 }
 
 /* Go stones layer */
