@@ -12,23 +12,40 @@
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
 
-/* For dark theme - use the actual color values from your CSS */
-body.dark .profile-card,
-body.dark .avatar-and-ratings-row {
-    background-color: #222222 !important; /* dark.card-background-color value */
+/* Use direct hex values instead of CSS variables */
+.profile-card {
+    background-color: #222222 !important; /* dark theme background */
     border-radius: 4px;
     padding: 15px;
 }
 
-body.dark .ratings-container,
-body.dark .ratings-chart {
-    background-color: #222222 !important;
+/* For light theme support */
+body.light .profile-card {
+    background-color: #f7f7f7 !important; /* light theme background */
 }
 
-/* Ensure text is visible */
-body.dark .ratings-container *,
-body.dark .ratings-chart * {
-    color: #bbbbbb !important; /* dark.text-color value */
+/* If profile-card isn't the right container, use avatar-and-ratings-row */
+.avatar-and-ratings-row {
+    background-color: #222222 !important;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+body.light .avatar-and-ratings-row {
+    background-color: #f7f7f7 !important;
+}
+
+/* Make sure text is readable */
+.ratings-container,
+.ratings-chart,
+.ratings-grid {
+    color: #bbbbbb !important; /* dark text color */
+}
+
+body.light .ratings-container,
+body.light .ratings-chart,
+body.light .ratings-grid {
+    color: #202020 !important; /* light text color */
 }
 
 /* Go stones layer */
