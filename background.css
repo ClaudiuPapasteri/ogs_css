@@ -12,42 +12,23 @@
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
 
-/* Target only the main container that holds both ratings sections */
-.profile-card {
-    background-color: var(--card-background-color) !important;
+/* For dark theme - use the actual color values from your CSS */
+body.dark .profile-card,
+body.dark .avatar-and-ratings-row {
+    background-color: #222222 !important; /* dark.card-background-color value */
     border-radius: 4px;
     padding: 15px;
 }
 
-/* Or if that doesn't work, target the direct parent */
-.avatar-and-ratings-row {
-    background-color: var(--card-background-color) !important;
-    border-radius: 4px;
-    padding: 15px;
+body.dark .ratings-container,
+body.dark .ratings-chart {
+    background-color: #222222 !important;
 }
 
-/* Make sure the chart container itself doesn't break interactivity */
-.ratings-chart,
-.ratings-container {
-    background-color: transparent !important;
-}
-
-/* Use a pseudo-element for the chart background without breaking interactivity */
-.ratings-chart::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--card-background-color) !important;
-    border-radius: 4px;
-    z-index: -1;
-}
-
-.ratings-chart {
-    position: relative;
-    z-index: 1;
+/* Ensure text is visible */
+body.dark .ratings-container *,
+body.dark .ratings-chart * {
+    color: #bbbbbb !important; /* dark.text-color value */
 }
 
 /* Go stones layer */
