@@ -12,44 +12,42 @@
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
 
-/* Target the specific containers that should have backgrounds */
-.profile-card,
-.User.container > div > div,  /* Targets the div between User container and profile-card */
-.avatar-and-ratings-row,
-.ratings-container,
-.ratings-chart,
-.ratings-row,
-.ratings-grid,
-.RatingsChart,
-.ratings-graph {
+/* Target only the main container that holds both ratings sections */
+.profile-card {
     background-color: var(--card-background-color) !important;
     border-radius: 4px;
-}
-
-/* Add some padding to make it look like other cards */
-.profile-card,
-.avatar-and-ratings-row,
-.ratings-container,
-.ratings-chart {
     padding: 15px;
-    margin-bottom: 10px;
 }
 
-/* Ensure all child elements inherit proper colors */
-.ratings-container *,
-.ratings-chart * {
-    color: var(--text-color) !important;
-    background-color: inherit !important;
-}
-
-/* Specific styling for the chart area */
-.ratings-chart svg {
+/* Or if that doesn't work, target the direct parent */
+.avatar-and-ratings-row {
     background-color: var(--card-background-color) !important;
+    border-radius: 4px;
+    padding: 15px;
 }
 
-/* For table elements */
-.ratings-container table {
-    background-color: inherit !important;
+/* Make sure the chart container itself doesn't break interactivity */
+.ratings-chart,
+.ratings-container {
+    background-color: transparent !important;
+}
+
+/* Use a pseudo-element for the chart background without breaking interactivity */
+.ratings-chart::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--card-background-color) !important;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.ratings-chart {
+    position: relative;
+    z-index: 1;
 }
 
 /* Go stones layer */
