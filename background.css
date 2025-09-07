@@ -12,26 +12,47 @@
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
 
-/* For the ratings chart container */
-.ratings-chart {
-    themed background card-background-color;
-    border-radius: 4px;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Target the containers and all their children */
+.ratings-chart,
+.ratings-container,
+.ratings-chart *,
+.ratings-container * {
+    background-color: inherit !important;
+    color: inherit !important;
 }
 
-/* For the ratings table container */
+/* Force background on the containers */
+.ratings-chart,
 .ratings-container {
-    themed background card-background-color;
+    themed background card-background-color !important;
+    themed color text-color !important;
     border-radius: 4px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
 }
 
-/* More specific selectors with themed mixin */
-.ratings-chart > div,
-.ratings-container > div {
-    themed background card-background-color !important;
+/* Specific targeting for common chart elements */
+.ratings-chart canvas {
+    background-color: var(--card-background-color) !important;
+}
+
+/* For React-based charts that might use specific classes */
+.ratings-chart .recharts-wrapper,
+.ratings-chart .recharts-surface {
+    background-color: var(--card-background-color) !important;
+}
+
+/* For table elements specifically */
+.ratings-container table,
+.ratings-container thead,
+.ratings-container tbody,
+.ratings-container tr,
+.ratings-container td,
+.ratings-container th {
+    background-color: inherit !important;
+    color: inherit !important;
+    border-color: var(--shade3) !important;
 }
 
 /* Go stones layer */
