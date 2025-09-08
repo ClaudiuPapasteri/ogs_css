@@ -12,7 +12,8 @@
 
 /* Fix Ratings Container and Rating Chart that have no Dark/Light theme color and become illisible when applying background images */
 
-/* Dark theme - Profile */
+/*
+// Dark theme - Profile 
 body.dark #main-content > div > main > div > div > div > div > .profile-card,
 body.dark #main-content > div > main > div > div > div > .profile-card,
 body.dark #main-content > div > main > div > div > .profile-card,
@@ -23,7 +24,7 @@ body.dark #main-content > div > main > .profile-card {
     padding: 15px !important;
 }
 
-/* Light theme - Profile */
+// Light theme - Profile 
 body.light #main-content > div > main > div > div > div > div > .profile-card,
 body.light #main-content > div > main > div > div > div > .profile-card,
 body.light #main-content > div > main > div > div > .profile-card,
@@ -31,6 +32,50 @@ body.light #main-content > div > main > div > .profile-card,
 body.light #main-content > div > main > .profile-card {
     background-color: #f7f7f7 !important;
 }
+*/
+
+/* Dark - avatar-container */
+body.dark #main-content > div > main > div > div > div > div > .profile-card > .avatar-container,
+body.dark #main-content > div > main > div > div > div > .profile-card > .avatar-container,
+body.dark #main-content > div > main > div > div > .profile-card > .avatar-container,
+body.dark #main-content > div > main > div > .profile-card > .avatar-container,
+body.dark #main-content > div > main > .profile-card > .avatar-container {
+    background-color: #222222 !important;
+    border-radius: 4px !important;
+    padding: 15px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Light - avatar-container */
+body.light #main-content > div > main > div > div > div > div > .profile-card > .avatar-container,
+body.light #main-content > div > main > div > div > div > .profile-card > .avatar-container,
+body.light #main-content > div > main > div > div > .profile-card > .avatar-container,
+body.light #main-content > div > main > div > .profile-card > .avatar-container,
+body.light #main-content > div > main > .profile-card > .avatar-container {
+    background-color: #f7f7f7 !important;
+}
+
+/* Dark - ratings-container */
+body.dark #main-content > div > main > div > div > div > div > .profile-card > .ratings-container,
+body.dark #main-content > div > main > div > div > div > .profile-card > .ratings-container,
+body.dark #main-content > div > main > div > div > .profile-card > .ratings-container,
+body.dark #main-content > div > main > div > .profile-card > .ratings-container,
+body.dark #main-content > div > main > .profile-card > .ratings-container {
+    background-color: #222222 !important;
+    border-radius: 4px !important;
+    padding: 15px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Light - ratings-container */
+body.light #main-content > div > main > div > div > div > div > .profile-card > .ratings-container,
+body.light #main-content > div > main > div > div > div > .profile-card > .ratings-container,
+body.light #main-content > div > main > div > div > .profile-card > .ratings-container,
+body.light #main-content > div > main > div > .profile-card > .ratings-container,
+body.light #main-content > div > main > .profile-card > .ratings-container {
+    background-color: #f7f7f7 !important;
+}
+
 
 /* Dark theme - Chart */
 .ratings-chart,
