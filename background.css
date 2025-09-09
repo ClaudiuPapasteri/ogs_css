@@ -4,7 +4,7 @@
     max-width: none !important; /* Removes any maximum width restriction */
     background-image: url('https://claudiupapasteri.github.io/ogs_css/stars_moon.png');   /* usual is https://claudiupapasteri.github.io/ogs_css/galaxy_modif.png */
     background-size: cover; /* Ensures the background covers the full container */
-    background-position: center; /* Centers the background image */
+    background-position: left; /* center;  Centers the background image */
     position: relative; /* Important for layering the animation */
     z-index: 0; /* Make container the base layer */
     overflow: hidden;
