@@ -41,7 +41,7 @@ body.dark #main-content > div > main > div > div > .profile-card > .avatar-and-r
 body.dark #main-content > div > main > div > .profile-card > .avatar-and-ratings-row > .avatar-container,
 body.dark #main-content > div > main > .profile-card > .avatar-and-ratings-row > .avatar-container,
 body.dark #main-content .avatar-container {
-    background-color: #222222 !important;
+    background-color: rgba(34, 34, 34, 0.9) !important; /* #222222 !important; */
     border-radius: 4px !important;
     padding: 15px !important;
     margin-bottom: 10px !important;
@@ -54,7 +54,7 @@ body.light #main-content > div > main > div > div > .profile-card > .avatar-and-
 body.light #main-content > div > main > div > .profile-card > .avatar-and-ratings-row > .avatar-container,
 body.light #main-content > div > main > .profile-card > .avatar-and-ratings-row > .avatar-container,
 body.light #main-content .avatar-container {
-    background-color: #f7f7f7 !important;
+    background-color: rgba(247, 247, 247, 0.9) !important; /* #f7f7f7 !important; */ 
 }
 
 /* Dark - ratings-container */
@@ -64,7 +64,7 @@ body.dark #main-content > div > main > div > div > .profile-card > .avatar-and-r
 body.dark #main-content > div > main > div > .profile-card > .avatar-and-ratings-row > .ratings-container,
 body.dark #main-content > div > main > .profile-card > .avatar-and-ratings-row > .ratings-container,
 body.dark #main-content .ratings-container {
-    background-color: #222222 !important;
+    background-color: rgba(34, 34, 34, 0.9) !important; /* #222222 !important; */
     border-radius: 4px !important;
     padding: 15px !important;
     margin-bottom: 10px !important;
@@ -77,7 +77,7 @@ body.light #main-content > div > main > div > div > .profile-card > .avatar-and-
 body.light #main-content > div > main > div > .profile-card > .avatar-and-ratings-row > .ratings-container,
 body.light #main-content > div > main > .profile-card > .avatar-and-ratings-row > .ratings-container,
 body.light #main-content .ratings-container {
-    background-color: #f7f7f7 !important;
+    background-color: rgba(247, 247, 247, 0.9) !important; /* #f7f7f7 !important; */ 
 }
 
 
@@ -88,7 +88,7 @@ body.light #main-content .ratings-container {
 .ratings-chart > div > div > div,  /* Targets the ratings-graph div */
 .ratings-chart > div > div > div > div,  /* Targets the empty div */
 .ratings-chart > div > div > div > div > svg.chart {
-    background-color: #222222 !important;
+    background-color: rgba(34, 34, 34, 0.9) !important; /* #222222 !important; */
     border-radius: 4px;
 }
 
@@ -99,7 +99,7 @@ body.light .ratings-chart > div > div,
 body.light .ratings-chart > div > div > div,
 body.light .ratings-chart > div > div > div > div,
 body.light .ratings-chart > div > div > div > div > svg.chart {
-    background-color: #f7f7f7 !important;
+    background-color: rgba(247, 247, 247, 0.9) !important; /* #f7f7f7 !important; */ 
 }
 
 /* Add padding to the main chart container */
